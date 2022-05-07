@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Todo_App</string>
+    <string name="add_button_title">Add</string>
+    <string name="clicked_counter">Clicked counter : %d</string>
+    <string name="remove_button_title">Remove</string>
+    <string name="you_reached_100">You reached 100 clicks</string>
+    <string name="dismiss">Continue</string>
+</resources>
