@@ -1,7 +1,9 @@
 package fr.agenor.tiptime
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import fr.agenor.tiptime.databinding.ActivityMainBinding
 import java.text.NumberFormat.*
@@ -14,7 +16,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.calculateButton.setOnClickListener { calculateTip() }
+        binding.calculateButton.setOnClickListener {
+            (getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager).hideSoftInputFromWindow(
+                binding.root.windowToken,
+                0
+            )
+
+            calculateTip()
+        }
     }
 
     private fun calculateTip() {
